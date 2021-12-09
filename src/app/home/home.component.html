@@ -1,0 +1,52 @@
+<mat-sidenav-container style="text-align: center;" class="example-container">
+  <mat-sidenav mode="side" opened=true>
+    <app-side-menu></app-side-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-banner></app-banner>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell (click)="goToDetails(element.id, element.accountName)" *matCellDef="let element"> {{element.position}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef> Type</th>
+        <td mat-cell (click)="goToDetails(element.id, element.accountName)" *matCellDef="let element"> {{element.type}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="accountName">
+        <th mat-header-cell *matHeaderCellDef> Account Name</th>
+        <td mat-cell (click)="goToDetails(element.id, element.accountName)" *matCellDef="let element"> {{element.accountName}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status</th>
+        <td mat-cell (click)="goToDetails(element.id, element.accountName)" *matCellDef="let element"> {{element.status}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="currency">
+        <th mat-header-cell *matHeaderCellDef> Currency</th>
+        <td mat-cell (click)="goToDetails(element.id, element.accountName)" *matCellDef="let element"> {{element.currency}}   </td>
+      </ng-container>
+
+      <ng-container matColumnDef="balance">
+        <th mat-header-cell *matHeaderCellDef> Balance</th>
+        <td mat-cell (click)="goToDetails(element.id, element.accountName)" *matCellDef="let element"> {{element.balance| currency}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

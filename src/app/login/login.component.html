@@ -1,0 +1,43 @@
+<div style="display: flex; background-image: url('https://i.ibb.co/23Tfh8R/3.png');Background-repeat :no-repeat;">
+  <h1 class="mat-display-2" style="margin-left: 20%;margin-top: 2%">Dream Bank</h1>
+</div>
+<div class="center" style="overflow: hidden">
+
+
+  <div class="center2" style="overflow: visible">
+    <div style="display: inline-block">
+      <h2 class="mat-h2" style="margin: 0 0 1px;">Welcome back</h2>
+      <hr class="solid">
+    </div>
+
+    <h1 class="mat-display-2" style="margin: 0 0 32px;">Login</h1>
+    <form [formGroup]="registerForm">
+      <p>For your money safety please delete all extensions for the browser you use to log in to your wallet</p><br>
+      <label >First name:</label><br>
+      <input formControlName="username" class="inputField form-control" type="text" id="fname" name="fname"
+             [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+      <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+        <div *ngIf="f.username.errors.required"> First Name is required</div>
+      </div>
+      <br>
+      <label >Password:</label><br>
+      <input [ngClass]="{ 'is-invalid':  registerForm.get('pass').errors?.required && submitted }" formControlName="pass" class="inputField form-control" type="password" [ngClass]="{ 'is-invalid': submitted && f.pass.errors }">
+      <small *ngIf="registerForm.get('pass').errors?.required && submitted" class="text-danger"><br>Password is required</small>
+      <br><br>
+    </form>
+    <button (click)="login()" class="button">Login</button>
+  </div>
+  <br>
+  <br>
+
+  <div class="align-left">
+    <h2 class="mat-h2" style="margin: 0 0 1px;">Don't have an account?</h2>
+    <p>Register here <span>&#8594;</span></p>
+  </div>
+  <div class="align-right">
+    <button class="button-secondary">Create account</button>
+  </div>
+
+</div>
+
+

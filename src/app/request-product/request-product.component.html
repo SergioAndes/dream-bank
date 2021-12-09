@@ -1,0 +1,54 @@
+<div
+  style="min-height: 100vh;background-image: linear-gradient(to bottom, #013068, #012f65, #002d63, #002c60, #002b5e);">
+
+  <div style="display: flex; background-image: url('https://i.ibb.co/g6mDVrS/95.png');Background-repeat :no-repeat;">
+    <h1 class="mat-display-2" style="margin-left: 20%;margin-top: 2%">Dream Bank</h1>
+  </div>
+
+  <div class="center" style="overflow: hidden">
+
+
+    <div class="center2" style="overflow: visible">
+      <div style="display: inline-block">
+        <h2 class="mat-h2" style="margin: 0 0 1px;">Request</h2>
+        <hr class="solid">
+      </div>
+
+      <h1 class="mat-display-2" style="margin: 0 0 32px;">New Product</h1>
+      <form [formGroup]="requestForm">
+        <p>Instant payments, and a lot of withdrawal methods available</p><br>
+        <label>Product</label><br>
+        <select name="cars" formControlName="product" id="cars">
+          <option [value]=0 selected="selected">please select a product</option>
+          <option *ngFor="let product of products" [value]="product.code"  value="volvo">{{product.name}}</option>
+        </select>
+         <small *ngIf="this.requestForm.get('product').value==0 && submitted" class="text-danger"><br>select a product to continue</small>
+        <br>
+        <label>Cellphone:</label><br>
+        <input formControlName="cellphone" class="inputField form-control" type="text"
+               [ngClass]="{ 'is-invalid': submitted && f.cellphone.errors }">
+        <small *ngIf="requestForm.get('cellphone').errors?.required && submitted" class="text-danger"><br>Cellphone is
+          required</small>
+        <br>
+
+
+        <label>Monthly Income:</label><br>
+        <input [ngClass]="{ 'is-invalid':  requestForm.get('monthlyIncome').errors?.required && submitted }"
+               formControlName="monthlyIncome" class="inputField form-control" type="number">
+        <small *ngIf="requestForm.get('monthlyIncome').errors?.required && submitted" class="text-danger"><br>Monthly income
+          is
+          required</small>
+
+        <br><br>
+      </form>
+      <button (click)="request()" class="button">Send</button>
+      <br><br>
+      <mat-label (click)="cancel()" style="color: white;cursor: pointer;">Cancel</mat-label>
+    </div>
+    <br>
+    <br>
+
+
+  </div>
+</div>
+
