@@ -8,8 +8,12 @@ import {RequestProductComponent} from './request-product/request-product.compone
 
 
 const routes: Routes = [
+    {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
   { path: 'login', component: LoginComponent },
-  { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'account/:idAccount', component: AccountDetailsComponent },
   { path: 'sidemenu', component: SideMenuComponent },
