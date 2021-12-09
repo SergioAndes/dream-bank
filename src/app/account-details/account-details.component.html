@@ -6,7 +6,7 @@
     <app-banner></app-banner>
 
     <div style="margin-left: 80px;margin-right: 80px;margin-top: 20px;margin-bottom: 20px" >
-<mat-card>{{accountName}} <mat-icon (click)="goToHome">exit_to_app</mat-icon></mat-card>
+<mat-card>{{accountName}} <mat-icon (click)="goToHome()">exit_to_app</mat-icon></mat-card>
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
       <!--- Note that these columns can be defined in any order.

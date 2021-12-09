@@ -24,6 +24,9 @@ import { BannerComponent } from './banner/banner.component';
 import {DataService} from './data.service';
 import { RequestProductComponent } from './request-product/request-product.component';
 import {MatSelectModule} from '@angular/material/select';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -53,9 +56,11 @@ import {MatSelectModule} from '@angular/material/select';
     MatTableModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    NgbModule
   ],
-  providers: [DataService],
+  providers: [DataService,
+  {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

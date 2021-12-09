@@ -17,4 +17,8 @@ export class BannerComponent implements OnInit {
     this.route.navigate(['requestProduct']);
   }
 
+  logout() {
+    localStorage.clear();
+    this.route.navigate(['']);
+  }
 }

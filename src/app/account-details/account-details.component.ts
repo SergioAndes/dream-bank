@@ -19,7 +19,7 @@ export class AccountDetailsComponent implements OnInit  {
   displayedColumns: string[] = ['date', 'description', 'currency', 'value', 'balance'];
   public accountName: string;
 
-  constructor(private sharedDataService:DataService, private accountService: AccountService, private route: ActivatedRoute,private router: Router) {
+  constructor(private routes: Router,private sharedDataService:DataService, private accountService: AccountService, private route: ActivatedRoute,private router: Router) {
     this.idaccount = this.route.snapshot.paramMap.get('idAccount');
     this.accountName= sessionStorage.getItem("accountName")
   }
@@ -29,6 +29,8 @@ export class AccountDetailsComponent implements OnInit  {
     this.getAccountDetail();
   }
   goToHome(): void {
+    console.log("ds")
+    this.routes.navigate(['home']);
   }
 
   getAccountDetail(): void {

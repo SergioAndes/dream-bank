@@ -40,6 +40,7 @@ mat-label{
   background-image: linear-gradient(to right, #123263, #0e3062, #0a2e61, #062c5f, #022a5e);
   color: white;
   border-left:solid #00F2E6;
+  cursor: pointer;
 }
 
 /* Clear floats after the columns */

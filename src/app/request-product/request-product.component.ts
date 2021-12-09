@@ -50,17 +50,14 @@ export class RequestProductComponent implements OnInit {
   }
 
   request() {
-    console.log(this.requestForm);
-
-
     if (this.validatefields()) {
       return;
     }
-
     Swal.fire('Request success!', 'Your order has been sent successfully,<br>an advisor will contact you soon', 'success')
       .then(function() {
-        window.location.href = "home";
+        window.location.href = "#/home";
       });;
+
   }
 
   cancel() {

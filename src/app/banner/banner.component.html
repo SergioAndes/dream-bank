@@ -1,35 +1,42 @@
-    <div style="position:relative;text-align:right; height: 100px;overflow: hidden">
-      <div style=" position:absolute;bottom:15%;right:10%;display: inline-block">
-        <mat-icon>notifications</mat-icon>
-        <mat-icon> chat</mat-icon>
-        <img
-          src="https://areajugones.sport.es/wp-content/uploads/2020/12/tobey-maguire-sera-spider-man-otra-vez-en-doctor-strange-2-1080x609.jpg">
-        <mat-label> </mat-label>
+<div style="position:relative;text-align:right; height: 100px;">
+  <div style=" position:absolute;bottom:15%;right:10%;display: inline-block">
+    <mat-icon>notifications</mat-icon>
+    <mat-icon> chat</mat-icon>
+    <img
+      src="https://areajugones.sport.es/wp-content/uploads/2020/12/tobey-maguire-sera-spider-man-otra-vez-en-doctor-strange-2-1080x609.jpg">
+
+      <mat-label >Peter Parker </mat-label>
+      <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle></button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button (click)="logout()" ngbDropdownItem>Logout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col" style="vertical-align: middle; padding-top: 30px;margin-left: 50px">
+      <div style="display:block;">
+        <img class="avatar2"
+             src="https://areajugones.sport.es/wp-content/uploads/2020/12/tobey-maguire-sera-spider-man-otra-vez-en-doctor-strange-2-1080x609.jpg">
+        <div style="display: inline-block;vertical-align: middle;">
+          <h2>Welcome back, Peter!</h2>
+          <p>your last login was 10/10/2016 5:34 PM</p>
+        </div>
       </div>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col" style="vertical-align: middle; padding-top: 30px;margin-left: 50px">
-          <div style="display:block;">
-            <img class="avatar2"
-                 src="https://areajugones.sport.es/wp-content/uploads/2020/12/tobey-maguire-sera-spider-man-otra-vez-en-doctor-strange-2-1080x609.jpg">
-            <div style="display: inline-block;vertical-align: middle;">
-              <h2>Welcome back, Peter!</h2>
-              <p>your last login was 10/10/2016 5:34 PM</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col" style="padding-top: 35px;text-align: center;"><p>Total Balance</p>
-          <h2>$17,288.29</h2>
-        </div>
-        <div style="margin-top: 30px;margin-bottom: 8px;border-right: 2px solid #1959D0;text-align: center"></div>
-        <div class="col" style="padding-top: 30px;text-align: center">
-          <button (click)="goToNewRequest()"  class="button">Request new product</button>
-          <br>
-          <button class="button">Make a transfer</button>
-        </div>
-      </div>
+    <div class="col" style="padding-top: 35px;text-align: center;"><p>Total Balance</p>
+      <h2>$17,288.29</h2>
     </div>
+    <div style="margin-top: 30px;margin-bottom: 8px;border-right: 2px solid #1959D0;text-align: center"></div>
+    <div class="col" style="padding-top: 30px;text-align: center">
+      <button (click)="goToNewRequest()" class="button">Request new product</button>
+      <br>
+      <button class="button">Make a transfer</button>
+    </div>
+  </div>
+</div>
 
