@@ -2,7 +2,13 @@
   color: white;
   transition: 0.3s;
 }
+@media (max-width: 1000px) {
+.mat-sidenav{
+  background-color: #022a5e;
+  width: 1px;
 
+}
+}
 .mat-sidenav{
   background-color: #022a5e;
   width: 220px;

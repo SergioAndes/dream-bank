@@ -20,6 +20,8 @@ export class AccountDetailsComponent implements OnInit  {
   dataSource;
   displayedColumns: string[] = ['date', 'description', 'currency', 'value', 'balance'];
   public accountName: string;
+  model2: any;
+  model1: any;
 
   constructor(public dialog: MatDialog,private routes: Router,private sharedDataService:DataService, private accountService: AccountService, private route: ActivatedRoute,private router: Router) {
     this.idaccount = this.route.snapshot.paramMap.get('idAccount');
@@ -65,4 +67,7 @@ export class AccountDetailsComponent implements OnInit  {
     });
   }
 
+  calculate() {
+
+  }
 }

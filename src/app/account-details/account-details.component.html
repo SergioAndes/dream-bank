@@ -5,48 +5,97 @@
   <mat-sidenav-content>
     <app-banner></app-banner>
 
-    <div style="margin-left: 80px;margin-right: 80px;margin-top: 20px;margin-bottom: 20px" >
-<mat-card>{{accountName}} <mat-icon (click)="goToHome()">exit_to_app</mat-icon></mat-card>
+    <div style="margin-left: 80px;margin-right: 80px;margin-top: 20px;margin-bottom: 20px">
+      <mat-card class="mat-card-1">{{accountName}}
+        <mat-icon (click)="goToHome()">exit_to_app</mat-icon>
+      </mat-card>
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
 
-      <!-- Position Column -->
+        <!-- Position Column -->
 
-      <ng-container matColumnDef="date">
-        <th mat-header-cell *matHeaderCellDef> Date</th>
-        <td mat-cell (click)="goToTransactionDetail(element)" *matCellDef="let element"> {{element.date}} </td>
-      </ng-container>
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef> Date</th>
+          <td mat-cell (click)="goToTransactionDetail(element)" *matCellDef="let element"> {{element.date}} </td>
+        </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="description">
-        <th mat-header-cell *matHeaderCellDef> Description</th>
-        <td mat-cell (click)="goToTransactionDetail(element)" *matCellDef="let element"> {{element.description}} </td>
-      </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef> Description</th>
+          <td mat-cell (click)="goToTransactionDetail(element)" *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
 
-      <!-- Weight Column -->
-      <ng-container matColumnDef="currency">
-        <th mat-header-cell *matHeaderCellDef> Currency</th>
-        <td mat-cell (click)="goToTransactionDetail(element)" *matCellDef="let element"> {{element.currency}} </td>
-      </ng-container>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="currency">
+          <th mat-header-cell *matHeaderCellDef> Currency</th>
+          <td mat-cell (click)="goToTransactionDetail(element)" *matCellDef="let element"> {{element.currency}} </td>
+        </ng-container>
 
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="value">
-        <th mat-header-cell *matHeaderCellDef> Value</th>
-        <td mat-cell (click)="goToTransactionDetail(element)" *matCellDef="let element" [ngClass]="{
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="value">
+          <th mat-header-cell *matHeaderCellDef> Value</th>
+          <td mat-cell (click)="goToTransactionDetail(element)" *matCellDef="let element" [ngClass]="{
             'negative' : element.value < 0
          }"> {{element.value| currency}}   </td>
-      </ng-container>
+        </ng-container>
 
-      <ng-container matColumnDef="balance">
-        <th mat-header-cell *matHeaderCellDef> Balance</th>
-        <td mat-cell (click)="goToTransactionDetail(element)" *matCellDef="let element"> {{element.balance| currency}} </td>
-      </ng-container>
+        <ng-container matColumnDef="balance">
+          <th mat-header-cell *matHeaderCellDef> Balance</th>
+          <td mat-cell (click)="goToTransactionDetail(element)"
+              *matCellDef="let element"> {{element.balance| currency}} </td>
+        </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row  *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <br>
+      <mat-card class="mat-card-2">
+        <mat-card-title>Calculate average</mat-card-title>
+        <mat-divider></mat-divider><br>
+        <mat-card-actions>
+
+
+<div class="row">
+    <div class="col">
+       <div style="margin-left: 10px"><label>Start date</label>
+          <div class="input-group">
+            <input class="form-control" placeholder="dd/mm/yyyy"
+                   name="d2" #c1="ngModel" [(ngModel)]="model1" ngbDatepicker #d1="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="col">
+        <div><label>End date</label>
+          <div class="input-group">
+
+            <input class="form-control" placeholder="dd/mm/yyyy"
+                   name="d2" #c2="ngModel" [(ngModel)]="model2" ngbDatepicker #d2="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
+            </div>
+          </div>
+    </div>
+    </div>
+  <div class="col"><div>
+    <button (click)="calculate()" style="margin-top: 29px; "  mat-raised-button color="primary">calculate</button>
+    </div>
+  </div>
+  </div><br><br>
+
+
+        </mat-card-actions>
+        <mat-card-content>
+
+        </mat-card-content>
+      </mat-card>
+
+
     </div>
 
   </mat-sidenav-content>

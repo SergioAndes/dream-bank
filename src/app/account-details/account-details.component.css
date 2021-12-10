@@ -54,13 +54,23 @@ table {
   overflow:hidden ;text-align: initial;
 }
 
-mat-card{
+.mat-card-1{
   border-radius: 8px;
   overflow:hidden;
   text-align: left;
   background-color: #E5E9F4;
   margin-bottom: 20px;
 }
+.mat-card-2{
+  border-radius: 8px;
+  overflow:visible;
+  text-align: left;
+  background-color: #E5E9F4;
+  margin-bottom: 20px;
+  width: 50%;
+
+}
+
 
 .avatar2{
   border-radius: 100%;
@@ -112,4 +122,20 @@ mat-icon{
   margin:auto!important;
   width: 25%!important;
   height: 50%!important;
+}
+button.calendar, button.calendar:active {
+  width: 2.75rem;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAcCAYAAAAEN20fAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEUSURBVEiJ7ZQxToVAEIY/YCHGxN6XGOIpnpaEsBSeQC9ArZbm9TZ6ADyBNzAhQGGl8Riv4BLAWAgmkpBYkH1b8FWT2WK/zJ8ZJ4qiI6XUI3ANnGKWBnht2/ZBDRK3hgVGNsCd7/ui+JkEIrKtqurLpEWaphd933+IyI3LEIdpCYCiKD6HcuOa/nwOa0ScJEnk0BJg0UTUWJRl6RxCYEzEmomsIlPU3IPW+grIAbquy+q6fluy/28RIBeRMwDXdXMgXLj/B2uimRXpui4D9sBeRLKl+1N+L+t6RwbWrZliTTTr1oxYtzVWiTQAcRxvTX+eJMnlUDaO1vpZRO5NS0x48sIwfPc87xg4B04MCzQi8hIEwe4bl1DnFMCN2zsAAAAASUVORK5CYII=') !important;
+  background-repeat: no-repeat;
+  background-size: 23px;
+  background-position: center;
+}
+
+@media (max-width: 1000px) {
+.mat-sidenav{
+  background-color: #022a5e;
+  width: 1px;
+}
+
+
 }
