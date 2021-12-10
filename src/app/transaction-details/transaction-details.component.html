@@ -1,0 +1,13 @@
+<h1>Transaction Details</h1>
+<mat-divider></mat-divider>
+<h2>Description:</h2>
+<mat-label>{{transactionDetail.description}}</mat-label>
+<h2>Date:</h2>
+<mat-label>{{transactionDetail.date}}</mat-label>
+<h2>Currency:</h2>
+<mat-label>{{transactionDetail.currency}}</mat-label>
+<h2>Value:</h2>
+<mat-label>{{transactionDetail.value | currency}}</mat-label>
+<h2>Balance:</h2>
+<mat-label>{{transactionDetail.balance | currency}}</mat-label><br>
+ <button (click)="close()" style="float: right; bottom: -30px"  mat-raised-button color="primary">Volver</button>

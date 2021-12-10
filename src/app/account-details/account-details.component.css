@@ -103,3 +103,13 @@ th{
 mat-icon{
   cursor: pointer;float: right
 }
+.mat-list-subtitle:hover {
+  background-image: linear-gradient(to right, #123263, #0e3062, #0a2e61, #062c5f, #022a5e);
+  color: white;
+  border-left:solid #00F2E6;
+}
+::ng-deep.mat-dialog-container {
+  margin:auto!important;
+  width: 25%!important;
+  height: 50%!important;
+}

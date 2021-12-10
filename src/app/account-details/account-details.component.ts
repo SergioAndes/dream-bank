@@ -6,6 +6,8 @@ import {AccountModel} from '../models/accountModel';
 import {AccountDetailModel} from '../models/AccountDetailModel';
 import {DataService} from '../data.service';
 import {Subscription} from 'rxjs';
+import {TransactionDetailsComponent} from '../transaction-details/transaction-details.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-account-details',
@@ -19,7 +21,7 @@ export class AccountDetailsComponent implements OnInit  {
   displayedColumns: string[] = ['date', 'description', 'currency', 'value', 'balance'];
   public accountName: string;
 
-  constructor(private routes: Router,private sharedDataService:DataService, private accountService: AccountService, private route: ActivatedRoute,private router: Router) {
+  constructor(public dialog: MatDialog,private routes: Router,private sharedDataService:DataService, private accountService: AccountService, private route: ActivatedRoute,private router: Router) {
     this.idaccount = this.route.snapshot.paramMap.get('idAccount');
     this.accountName= sessionStorage.getItem("accountName")
   }
@@ -50,6 +52,16 @@ export class AccountDetailsComponent implements OnInit  {
     }, error => {
       console.log(error);
       Swal.fire('Oops...', 'Credenciales incorrectas', 'error');
+    });
+  }
+
+  goToTransactionDetail(transaction): void {
+    const dialogRef = this.dialog.open(TransactionDetailsComponent, {
+      width: '100%',
+      height: '100%',
+       data: {
+        transaction: transaction,
+      }
     });
   }
 
